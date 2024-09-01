@@ -1,11 +1,17 @@
-# SysAdmin-Team ~
+// # SysAdmin-Team ~
 
 package main
 
 
 
 import (
-    
+        "os"
+    "log"
+		
+	"text/template"
+	"net/http"
+	
+//	"time"
     
 )
 
@@ -99,45 +105,45 @@ func appHandler(w http.ResponseWriter, r *http.Request) {
   pageTitle := "~ SysAdmin-Team - // - Website App"
   pagePath := r.URL.Path
   
-  pageType := ".."
+  // pageType := ".."
   
 // ,  ° . +
   pageData := htmlPageData {
       pageTitle: pageTitle,
       pagePath: pagePath,
       
-      pageList: []pageNav {
-          { pageTitle: "one", pageLink: "one"},
-          { pageTitle: "two", pageLink: "two"},
-          { pageTitle: "three", pageLink: "three"},
-      },
+  //    pageList: []pageNav {
+ //         { pageTitle: "one", pageLink: "one"},
+   //       { pageTitle: "two", pageLink: "two"},
+  //        { pageTitle: "three", pageLink: "three"},
+//      },
   	
   }  //. .  pageData
   
   if pagePath == "/settings" {
       pageTitle = "Settings Page"
-      pageList = pageList
+ //     pageList = pageList
   }
   
   // ,  ° . +
   if pagePath == "/inventory" {
       pageTitle = "Inventory Page"
-      pageList = pageList
+ //     pageList = pageList
   }
   // ,  ° . +
   if pagePath == "/itinerary" {
       pageTitle = "Itinerary Page"
-      pageList = pageList
+  //    pageList = pageList
   }
   // ,  ° . +
   if pagePath == "/quest_list" {
       pageTitle = "Quest List Page"
-      pageList = pageList
+ //     pageList = pageList
   }
   // ,  ° . +
   if pagePath == "/travel_log" {
       pageTitle = "Travel Log Page"
-      pageList = pageList
+//      pageList = pageList
   }
   
   
@@ -156,7 +162,7 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 
   pageTitle := "~ SysAdmin-Team - // - Website App"
   pagePath := r.URL.Path
-  pageType := ".."
+ // pageType := ".."
 
 
 // ,  ° . +
@@ -164,11 +170,11 @@ pageData := htmlPageData {
       pageTitle: pageTitle,
       pagePath: pagePath,
       
-      pageList: []pageNav {
-          { pageTitle: "one", pageLink: "one"},
-          { pageTitle: "two", pageLink: "two"},
-          { pageTitle: "three", pageLink: "three"},
-      },
+//      pageList: []pageNav {
+  //        { pageTitle: "one", pageLink: "one"},
+//          { pageTitle: "two", pageLink: "two"},
+  //        { pageTitle: "three", pageLink: "three"},
+ //     },
   	
   }  //. .  pageData
   
@@ -176,34 +182,34 @@ pageData := htmlPageData {
   // ,  ° . +
   if pagePath == "/user" {
       pageTitle = "User Page"
-      pageList = pageList
+ //     pageList = pageList
   }
   
   // ,  ° . +
   if pagePath == "/user" {
       pageTitle = "User Page"
-      pageList = pageList
+//      pageList = pageList
   }
   
   if pagePath == "/account" {
       pageTitle = "Account Page"
-      pageList = pageList
+  //    pageList = pageList
   }
   
   if pagePath == "/profile" {
       pageTitle = "Profile Page"
-      pageList = pageList
+ //     pageList = pageList
   }
   
 // ,  ° . +
   if pagePath == "/portfolio" {
       pageTitle = "Portfolio Page"
-      pageList = pageList
+   //   pageList = pageList
   }
   
   if pagePath == "/resume" {
       pageTitle = "Resume Page"
-      pageList = pageList
+ //     pageList = pageList
   }
 
 
@@ -234,38 +240,38 @@ pageData := htmlPageData {
       pageTitle: pageTitle,
       pagePath: pagePath,
       
-      pageList: []pageNav {
-          { pageTitle: "one", pageLink: "one"},
-          { pageTitle: "two", pageLink: "two"},
-          { pageTitle: "three", pageLink: "three"},
-      },
+ //     pageList: []pageNav {
+  //        { pageTitle: "one", pageLink: "one"},
+  //        { pageTitle: "two", pageLink: "two"},
+   //       { pageTitle: "three", pageLink: "three"},
+ //     },
   	
   }  //. .  pageData
   
   
   if pagePath == "/" {
       pageTitle = "Index Page"
-      pageList = pageList
+  //    pageList = pageList
   }
   
     if pagePath == "/front" {
       pageTitle = "Front Page"
-      pageList = pageList
+  //    pageList = pageList
   }
   
     if pagePath == "/main" {
       pageTitle = "Main Page"
-      pageList = pageList
+ //     pageList = pageList
   }
   
     if pagePath == "/home" {
       pageTitle = "Home Page"
-      pageList = pageList
+  //    pageList = pageList
   }
   
     if pagePath == "/start" {
       pageTitle = "Start Page"
-      pageList = pageList
+//      pageList = pageList
   }
 
 // ,  ° . +
@@ -335,4 +341,6 @@ func main() {
   if err := http.ListenAndServe(":"+port, nil); err != nil {
     log.Fatal("Error Starting the HTTP Server :", err)
     return
+  }
+  
   }
